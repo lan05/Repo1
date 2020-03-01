@@ -1,0 +1,37 @@
+entity Order {
+	orderNum String,
+	receivedDate Instant,
+	location String,
+    note String,
+    status Status,
+	carrier String,
+	shippingLabel FileBlob,
+    packingList FileBlob,
+	trackingNum String,
+	itemDesc String,
+	sku String,
+	saleChannel Channel
+}
+
+enum Carrier {
+    FEDEX, USPS, DHL
+}
+
+enum Channel {
+    Amazon, BigCommerce, Walmart, Ebay, Sears
+}
+
+enum Status {
+    Acknowleged, Processing, Shipped, Exception
+}
+
+paginate Order with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix」
